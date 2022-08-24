@@ -1,0 +1,28 @@
+{% block content %}
+
+{% if user.is_superuser %}
+
+<div>
+    <h1>Users</h1>
+
+{% for u in all_users %}
+{{ u.username }}
+{% endfor %}
+
+</div>
+
+{% else %}
+
+<div>
+    <h1>User Profile</h1>
+
+{{ user.username }}
+{{ user.email }}
+{{ user.firstname  }}
+{{ user.lastname }}
+
+</div>
+
+{% endif %}
+
+{% endblock %}

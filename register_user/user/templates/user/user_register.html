@@ -1,9 +1,11 @@
 {% block content %}
+
+{% load crispy_forms_tags %}
 <div>
   <h1>Register</h1>
   <form method="POST">
     {% csrf_token %}
-    {{ user_register }}
+    {{ user_register | crispy }}
     <button class="btn btn-primary" type="submit">Register</button>
   </form>
   <p class="text-center">Already Registred?<a href="/user_login">Login Here</a>.</p>
